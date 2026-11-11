@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-900 font-sans antialiased;
+  }
+
+  /* Custom range slider styling */
+  input[type='range'] {
+    -webkit-appearance: none;
+    appearance: none;
+    @apply bg-transparent cursor-pointer;
+  }
+
+  input[type='range']::-webkit-slider-runnable-track {
+    @apply h-2 rounded-full bg-slate-200;
+  }
+
+  input[type='range']::-moz-range-track {
+    @apply h-2 rounded-full bg-slate-200;
+  }
+
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    @apply w-5 h-5 rounded-full bg-primary-600 border-2 border-white shadow-md -mt-1.5 transition-transform;
+  }
+
+  input[type='range']::-moz-range-thumb {
+    @apply w-5 h-5 rounded-full bg-primary-600 border-2 border-white shadow-md transition-transform;
+  }
+
+  input[type='range']::-webkit-slider-thumb:hover {
+    @apply scale-110;
+  }
+
+  input[type='range']::-moz-range-thumb:hover {
+    @apply scale-110;
+  }
+}

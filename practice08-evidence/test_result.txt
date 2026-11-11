@@ -1,0 +1,33 @@
+ ✓ src/lib/validation.test.ts (21)
+   ✓ AC1 — interval validation (6)
+     ✓ accepts a valid interval where start > currentTime
+     ✓ rejects start equal to currentTime (AC1 requires strictly greater)
+     ✓ rejects start before currentTime
+     ✓ rejects start >= end (zero or negative duration)
+     ✓ rejects end > 1440
+     ✓ rejects start < 0
+   ✓ AC2 — duration limit (3)
+     ✓ accepts a booking of exactly 120 minutes
+     ✓ rejects a booking of 121 minutes
+     ✓ isTooLong returns true for 121 min and false for 120 min
+   ✓ AC3 — blocked room (2)
+     ✓ rejects a blocked room even with a valid time slot
+     ✓ isRoomBlocked returns true for a blocked room
+   ✓ AC4 — overlap detection (4)
+     ✓ rejects a request that overlaps an existing booking
+     ✓ allows a request whose start equals an existing booking end (touching)
+     ✓ allows a request whose end equals an existing booking start (touching)
+     ✓ hasOverlap returns the conflicting booking or null
+   ✓ AC5 — decision and data preservation (4)
+     ✓ returns "available" with no errors when all rules pass
+     ✓ returns "unavailable" with errors when a rule fails
+     ✓ does not modify room bookings after a check
+     ✓ does not add a new booking after an available decision
+   ✓ multiple violations (1)
+     ✓ reports both AC1 (past start) and AC2 (too long) errors
+   ✓ null room guard (1)
+     ✓ returns decision null and an error when no room is selected
+
+ Test Files  1 passed (1)
+      Tests  21 passed (21)
+   Start at  21:38:26
